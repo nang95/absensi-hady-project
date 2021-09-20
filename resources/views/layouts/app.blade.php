@@ -57,7 +57,7 @@
                 <div class="navbar-header pull-left">
                     <a href="#" class="navbar-brand">
                         <small>
-                            <img src="{{ asset('img/logo.png') }}" alt="" />
+                            <img src="{{ asset('img/logo.jpg') }}" alt="" />
                         </small>
                     </a>
                 </div>

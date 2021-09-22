@@ -44,6 +44,7 @@
                             <th>Nama</th>
                             <th>Tanggal Mulai</th>
                             <th>Tanggal Selesai</th>
+                            <th>Keterangan</th>
                             <th width="30%">Aksi</th>
                         </tr>
                     </thead>
@@ -66,6 +67,7 @@
                             <td>{{ $data_izin->karyawan->nama }}</td>
                             <td>{{ $data_izin->tanggal_mulai }}</td>
                             <td>{{ $data_izin->tanggal_selesai }}</td>
+                            <td>{{ $data_izin->keterangan }}</td>
                             <td>
                                 <form onsubmit="deleteThis(event)" action="{{ route('admin.izin.delete') }}" method="POST" style="display:inline-block">
                                     {{ csrf_field() }} {{ method_field('DELETE') }}

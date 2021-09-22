@@ -13,8 +13,6 @@
                 <th width="5%">#</th>
                 <th>Tanggal</th>
                 <th>Jam Hadir</th>
-                <th>Istirahat</th>
-                <th>Masuk Istirahat</th>
                 <th>Jam Keluar</th>
                 <th>Waktu Telat</th>
                 <th>Status</th>
@@ -28,20 +26,6 @@
                 <td>
                     @if ($data_kehadiran->jam_masuk != null)
                         {{ $data_kehadiran->jam_masuk }}
-                    @else
-                        -
-                    @endif   
-                </td>
-                <td>
-                    @if ($data_kehadiran->istirahat != null)
-                        {{ $data_kehadiran->istirahat }}
-                    @else
-                        -
-                    @endif   
-                </td>
-                <td>
-                    @if ($data_kehadiran->jam_masuk_istirahat != null)
-                        {{ $data_kehadiran->jam_masuk_istirahat }}
                     @else
                         -
                     @endif   

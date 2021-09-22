@@ -33,6 +33,13 @@
                 </div>
 
                 <div class="row">
+                    <div class="col-md-12" style="font-size: 12px">Jam Kantor</div>
+                    <div class="col-md-12" style="font-weight: bold; font-size: 20px">
+                        {{ $kantor->jam_masuk }} - {{ $kantor->jam_pulang }}
+                    </div>
+                </div>
+
+                <div class="row">
                     <div class="col-md-12" style="font-size: 12px">Status</div>
                     <div class="col-md-12" style="font-weight: bold; font-size: 20px">
                         @if ($absensi->status == "Hadir")

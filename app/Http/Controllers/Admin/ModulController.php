@@ -65,9 +65,7 @@ class ModulController extends Controller
      */
     public function edit(Modul $modul)
     {
-        $karyawan = Karyawan::orderBy('nama', 'asc')->get();
-        return view('apps.admin.modul.edit')->with('modul', $modul)
-                                               ->with('karyawan', $karyawan);
+        return view('apps.admin.modul.edit')->with('modul', $modul);
     }
 
     /**

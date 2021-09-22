@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Pegawai;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\{Karyawan, Absensi};
+use App\Models\{Karyawan, Absensi, Kantor};
 
 class DashboardController extends Controller
 {
@@ -15,6 +15,8 @@ class DashboardController extends Controller
                             ->where('karyawan_id', $karyawan->id)
                             ->orderBy('id', 'desc')
                             ->first();
+
+        $kantor = Kantor::first();
 
         if ($absensi == null) {
                 $absensi = Absensi::create([
@@ -34,6 +36,7 @@ class DashboardController extends Controller
                                 ->get();
 
         return view('apps.pegawai.beranda')->with('absensi', $absensi)
+                                           ->with('kantor', $kantor)
                                            ->with('log_kehadiran', $log_kehadiran);
     }
 }

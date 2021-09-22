@@ -92,11 +92,6 @@
                                 <a href="{{ route('admin.kehadiran.edit', $data_kehadiran->id) }}">
                                     <button class="btn btn-warning btn-sm">Ubah</button>
                                 </a>
-                                <form onsubmit="deleteThis(event)" action="{{ route('admin.kehadiran.delete') }}" method="POST" style="display:inline-block">
-                                    {{ csrf_field() }} {{ method_field('DELETE') }}
-                                    <input type="hidden" name="id" value="{{ $data_kehadiran->id }}">
-                                    <button class="btn btn-danger btn-sm">Hapus</button>
-                                </form>
                             </td>
                         </tr>
                         @endforeach

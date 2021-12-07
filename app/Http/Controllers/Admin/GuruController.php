@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Session;
 use App\Http\Requests\Karyawan\{CreateRequest, UpdateRequest};
 
-class KaryawanController extends Controller
+class GuruController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,17 +18,17 @@ class KaryawanController extends Controller
      */ 
     public function index(Request $request)
     {
-        $karyawan = Karyawan::orderBy('nama', 'asc');
+        $guru = Karyawan::orderBy('nama', 'asc');
         $q_nama = $request->q_nama;
 
         if (!empty($q_nama)) {
-            $karyawan->where('nama', 'LIKE', '%'.$q_nama.'%');
+            $guru->where('nama', 'LIKE', '%'.$q_nama.'%');
         }
         
-        $karyawan = $karyawan->paginate(20);
-        $skipped = ($karyawan->perPage() * $karyawan->currentPage()) - $karyawan->perPage();
+        $guru = $guru->paginate(20);
+        $skipped = ($guru->perPage() * $guru->currentPage()) - $guru->perPage();
 
-        return view('apps.admin.karyawan.index')->with('karyawan', $karyawan)
+        return view('apps.admin.guru.index')->with('guru', $guru)
                                                ->with('skipped', $skipped)
                                                ->with('q_nama', $q_nama);
     }
@@ -41,7 +41,7 @@ class KaryawanController extends Controller
     public function create()
     {
         $jabatan = Jabatan::orderBy('nama', 'asc')->get();
-        return view('apps.admin.karyawan.create')->with('jabatan', $jabatan);
+        return view('apps.admin.guru.create')->with('jabatan', $jabatan);
     }
 
     /**
@@ -73,7 +73,7 @@ class KaryawanController extends Controller
         $user->roles()->attach($role->id);
 
         Session::flash('flash_message', 'Data telah disimpan');
-        return redirect()->route('admin.karyawan');
+        return redirect()->route('admin.guru');
     }
 
     /**
@@ -82,10 +82,10 @@ class KaryawanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Karyawan $karyawan)
+    public function edit(Karyawan $guru)
     {
         $jabatan = Jabatan::orderBy('nama', 'asc')->get();
-        return view('apps.admin.karyawan.edit')->with('karyawan', $karyawan)
+        return view('apps.admin.guru.edit')->with('guru', $guru)
                                                ->with('jabatan', $jabatan);
     }
 
@@ -98,16 +98,16 @@ class KaryawanController extends Controller
      */
     public function update(UpdateRequest $request)
     {
-        $karyawan = Karyawan::findOrFail($request->id);
-        $karyawan->update($request->all());
+        $guru = Karyawan::findOrFail($request->id);
+        $guru->update($request->all());
 
-        $user = User::findOrFail($karyawan->user_id);
+        $user = User::findOrFail($guru->user_id);
         $user->update([
             'email' => $request->email
         ]);
     
         Session::flash('flash_message', 'Data telah diubah');
-        return redirect()->route('admin.karyawan');
+        return redirect()->route('admin.guru');
     }
 
     /**
@@ -118,9 +118,9 @@ class KaryawanController extends Controller
      */
     public function delete(Request $request)
     {
-        $karyawan = Karyawan::findOrFail($request->id);
+        $guru = Karyawan::findOrFail($request->id);
         
-        $karyawan->delete();
+        $guru->delete();
 
         return redirect()->back();
     }

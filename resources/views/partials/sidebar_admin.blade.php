@@ -19,9 +19,9 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('admin.karyawan') }}">
+                <a href="{{ route('admin.guru') }}">
                     <i class="menu-icon c-black-500 glyphicon glyphicon-user"></i>
-                    <span class="menu-text"> Karyawan </span>
+                    <span class="menu-text"> Guru </span>
                 </a>
             </li>
         </ul>

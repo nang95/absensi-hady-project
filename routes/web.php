@@ -18,12 +18,12 @@ Route::middleware('auth')->group(function(){
         Route::put('jabatan', 'JabatanController@update')->name('jabatan.update');
         Route::delete('jabatan', 'JabatanController@delete')->name('jabatan.delete');
     
-        Route::get('karyawan', 'KaryawanController@index')->name('karyawan');
-        Route::get('karyawan/create', 'KaryawanController@create')->name('karyawan.create');
-        Route::post('karyawan', 'KaryawanController@store')->name('karyawan.store');
-        Route::get('karyawan/edit/{karyawan}', 'KaryawanController@edit')->name('karyawan.edit');
-        Route::put('karyawan', 'KaryawanController@update')->name('karyawan.update');
-        Route::delete('karyawan', 'KaryawanController@delete')->name('karyawan.delete');
+        Route::get('guru', 'GuruController@index')->name('guru');
+        Route::get('guru/create', 'GuruController@create')->name('guru.create');
+        Route::post('guru', 'GuruController@store')->name('guru.store');
+        Route::get('guru/edit/{guru}', 'GuruController@edit')->name('guru.edit');
+        Route::put('guru', 'GuruController@update')->name('guru.update');
+        Route::delete('guru', 'GuruController@delete')->name('guru.delete');
     
         Route::get('kehadiran', 'KehadiranController@index')->name('kehadiran');
         Route::get('kehadiran/generate-hari-libur', 'KehadiranController@generateHariLibur')->name('kehadiran.generate-hari-libur');

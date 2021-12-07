@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Karyawan
+    Guru
 @endsection
 
 @section('content')
@@ -15,16 +15,16 @@
         <div class="col-lg-12 col-md-12">
             <div class="well with-header with-footer">
                 <div class="header bg-blue">
-                    Data Karyawan
+                    Data Guru
                 </div>
                 <div class="row" style="margin-bottom: 10px">
                     <div class="col-md-6">
-                        <a href="{{ route('admin.karyawan.create') }}" class="btn btn-success btn-sm">
+                        <a href="{{ route('admin.guru.create') }}" class="btn btn-success btn-sm">
                             Tambah
                         </a>
                     </div>
                     <div class="col-md-6" style="display:flex; justify-content: flex-end">
-                        <form action="{{ route('admin.karyawan') }}" style="display: flex" method="GET">
+                        <form action="{{ route('admin.guru') }}" style="display: flex" method="GET">
                             <div class="input-group-sm">
                                 <input type="text" class="form-control" placeholder="Nama" name="q_nama" value="{{ $q_nama }}">
                             </div>
@@ -46,7 +46,7 @@
                         </tr>
                     </thead>
                     <tbody>                        
-                        @if (count($karyawan) === 0)
+                        @if (count($guru) === 0)
                         <tr>
                             <td colspan="8" style="text-align:center">
                                 @if ($q_nama == "")
@@ -58,20 +58,20 @@
                         </tr>
                         @endif
 
-                        @foreach ($karyawan as $data_karyawan)
+                        @foreach ($guru as $data_guru)
                         <tr>
                             <td>{{ $loop->iteration + $skipped }}</td>
-                            <td>{{ $data_karyawan->nama }}</td>
-                            <td>{{ $data_karyawan->alamat }}</td>
-                            <td>{{ $data_karyawan->jabatan->nama }}</td>
-                            <td>{{ $data_karyawan->no_telp }}</td>
+                            <td>{{ $data_guru->nama }}</td>
+                            <td>{{ $data_guru->alamat }}</td>
+                            <td>{{ $data_guru->jabatan->nama }}</td>
+                            <td>{{ $data_guru->no_telp }}</td>
                             <td>
-                                <a href="{{ route('admin.karyawan.edit', $data_karyawan->id) }}">
+                                <a href="{{ route('admin.guru.edit', $data_guru->id) }}">
                                     <button class="btn btn-warning btn-sm">Ubah</button>
                                 </a>
-                                <form onsubmit="deleteThis(event)" action="{{ route('admin.karyawan.delete') }}" method="POST" style="display:inline-block">
+                                <form onsubmit="deleteThis(event)" action="{{ route('admin.guru.delete') }}" method="POST" style="display:inline-block">
                                     {{ csrf_field() }} {{ method_field('DELETE') }}
-                                    <input type="hidden" name="id" value="{{ $data_karyawan->id }}">
+                                    <input type="hidden" name="id" value="{{ $data_guru->id }}">
                                     <button class="btn btn-danger btn-sm">Hapus</button>
                                 </form>
                             </td>
@@ -81,7 +81,7 @@
                 </table>
 
                 <div class="footer">
-                    {{ $karyawan->appends(['q_nama' => $q_nama])->links() }}
+                    {{ $guru->appends(['q_nama' => $q_nama])->links() }}
                 </div>
             </div>
 

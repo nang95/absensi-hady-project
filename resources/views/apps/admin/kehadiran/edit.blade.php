@@ -67,7 +67,7 @@
                                     <button class="btn btn-success btn-sm" type="submit">Simpan</button>
                                 </div>
                                 <div class="col-md-6" style="text-align:right">
-                                    <a href="{{ route('admin.karyawan') }}">
+                                    <a href="{{ route('admin.guru') }}">
                                         <button class="btn btn-danger btn-sm" type="button">Batal</button>
                                     </a>  
                                 </div>

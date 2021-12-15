@@ -56,9 +56,10 @@
                 <!-- Navbar Barnd -->
                 <div class="navbar-header pull-left">
                     <a href="#" class="navbar-brand">
-                        <small>
-                            <img src="{{ asset('img/logo.jpg') }}" alt="" />
-                        </small>
+                        <div style="display: flex">
+                            <img src="{{ asset('img/logo.png') }}" style="width: 35px; height: 35px" alt="" />
+                            <div style="padding-left: 5px; width: 100px; font-size: 14px">SMK SWASTA BUDI SETIA</div>
+                        </div>
                     </a>
                 </div>
                 <!-- /Navbar Barnd -->

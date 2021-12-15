@@ -14,12 +14,12 @@
             <div class="databox-left bg-themesecondary">
                 <div class="databox-piechart">
                     <div data-toggle="easypiechart" class="easyPieChart" data-barcolor="#fff" data-linecap="butt" data-percent="50" data-animate="500" data-linewidth="3" data-size="47" data-trackcolor="rgba(255,255,255,0.1)">
-                        <span class="white font-90">Karyawan {{ $karyawan }}</span>
+                        <span class="white font-90">Guru {{ $guru }}</span>
                     </div>
                 </div>
             </div>
             <div class="databox-right">
-                <span class="databox-number themesecondary">Jumlah Karyawan</span>
+                <span class="databox-number themesecondary">Jumlah Guru</span>
             </div>
         </div>
     </div>

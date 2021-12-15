@@ -92,10 +92,4 @@
             <span class="menu-text"> Generate Hari Libur </span>
         </a>
     </li> 
-    <li>
-        <a href="{{ route('admin.modul') }}">
-            <i class="menu-icon c-black-500 glyphicon glyphicon-link"></i>
-            <span class="menu-text"> Modul </span>
-        </a>
-    </li>
 </ul>
